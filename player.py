@@ -1,14 +1,16 @@
 from map import Map
 import sys
 import random
+"""
+this is player file we create player and movement here
 
+"""
 
 class Player(Map):
     def __init__(self) -> None:
         # super().__init__()
         self.player_x = random.randint(0, 9)
         self.player_y = random.randint(0, 9)
-        self.dropped_in_whole = False
     def startpoint(self, grid, dragon_x):
         grid[self.player_x][self.player_y] = "🤺"
         try:
@@ -37,7 +39,7 @@ class Player(Map):
         else:
             print("invalid input")
         return self.player_x, self.player_y
-
+# define endgame to win the game or lose the game
     def endgame(self, grid, dragon_x, dragon_y, door_x, door_y, having_key):
         if grid[self.player_x][self.player_y] == grid[dragon_x][dragon_y] and self.player_x == dragon_x and self.player_y == dragon_y:
             sys.exit("Sorry Dragon Eats you")
@@ -47,7 +49,10 @@ class Player(Map):
             else:
                 print("you are on the door but u don`t have key")
 
+"""
+key feature player need key to open dungeon door
 
+"""
 class Key:
     def __init__(self) -> None:
         self.key_x = random.randint(0, 9)
@@ -62,5 +67,4 @@ class Key:
         if grid[player_x][player_y] == grid[self.key_x][self.key_y]:
             self.having_key = True
             print("you find key, now you can run!")
-        print(self.key_x, self.key_y)
         return self.having_key

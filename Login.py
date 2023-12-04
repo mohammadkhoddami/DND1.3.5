@@ -1,5 +1,8 @@
-import hashlib
+"""
 
+this is login logic that i created it reads passwords and users in txt files and register class save it in those txt files
+
+"""
 class Login:
     def login(self, user, password):
         user_list = []

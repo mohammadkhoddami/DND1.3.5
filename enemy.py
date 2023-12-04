@@ -1,16 +1,22 @@
 import random
 
+"""
+This file is for enemies that i craeted if player x y and enemy x y equals --> player will lose the game
 
+
+"""
+
+# dragon class
 class Dragon:
     def __init__(self) -> None:
         self.dragon_x = random.randint(0, 9)
         self.dragon_y = random.randint(0, 9)
         self.d = 0
-
+# create dragon
     def create_dragon(self, grid):
         grid[self.dragon_x][self.dragon_y] = "🟩"
         return self.dragon_x, self.dragon_y
-
+# dragon movement logic
     def dragonmovment(self, grid, player_x, player_y):
         self.d = ((player_x - self.dragon_x) ** 2 + (player_y - self.dragon_y) ** 2) ** 0.5
         self.chance = random.randint(0, 9)

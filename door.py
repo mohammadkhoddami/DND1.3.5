@@ -1,6 +1,11 @@
 import random
 
 
+"""
+This is the dungeon door if player x y going equal to dungeon door x y --> player will win the game and gonna escape from the dungeon
+"""
+
+
 class Door:
     def __init__(self) -> None:
         self.door_x = random.randint(0, 9)
@@ -11,9 +16,3 @@ class Door:
         return self.door_x, self.door_y
 
 
-"""
-note : 
-write a funtion for the time that door and dragon being in same position.
-should be used after dragon , player , dungeon and before draw map 
-it`s need a file at least!
-"""
